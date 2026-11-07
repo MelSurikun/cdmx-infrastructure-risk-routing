@@ -1,3 +1,22 @@
+#Cosas que no se deben subir al repo van acá:
+temp/
+
+# Datos: los originales y los intermedios no se suben (se regeneran con los scripts)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Archivos pesados de datos geograficos o comprimidos fuera de data/
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.zip
+
+#todo lo de abajo son cosas qué ignorar de subir al repo hablando de python, no mover
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

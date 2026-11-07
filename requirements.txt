@@ -1,0 +1,47 @@
+# Dependencias del proyecto con version fija.
+# Probado con Python 3.12 en Windows. Instalar con: pip install -r requirements.txt
+
+# Lenguaje y datos
+pandas==3.1.1
+numpy==2.5.4
+pyarrow==26.0.1
+
+# Datos geograficos y malla H3
+geopandas==1.2.0
+shapely==2.2.0
+pyproj==3.8.0
+pyogrio==0.13.0
+h3==4.5.0
+
+# Estadistica
+scipy==1.18.1
+statsmodels==0.15.0
+
+# Machine learning e interpretabilidad
+scikit-learn==1.9.1
+lightgbm==4.7.0
+imbalanced-learn==0.14.2
+shap==0.54.1
+
+# Reglas de asociacion
+mlxtend==0.25.0
+
+# Grafo vial y ruteo
+networkx==3.7
+osmnx==2.1.1
+
+# Visualizacion
+folium==0.20.0
+matplotlib==3.11.2
+
+# App demo
+streamlit==1.67.0
+streamlit-folium==0.27.4
+
+# Conexion a PostgreSQL / PostGIS
+psycopg[binary]==3.3.8
+SQLAlchemy==2.1.8
+
+# Notebooks
+jupyter==1.1.1
+ipykernel==7.4.0
