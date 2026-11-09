@@ -17,5 +17,6 @@ staging en el esquema stg con familia de falla (tabla stg.mapa_familia) y bander
 completa, 12,729), hueco_abril y coord_valida. sql/05_conteos_p1.sql compara cada conteo con la P1; las fuentes y
 sus huellas SHA-256 quedan en docs/fuentes_datos.md.
 Los dos CSV de esta tarea (ReportesAgua20222024.csv y locatel0311-2023.csv) están en un ZIP en la carpeta
-PROYECTO del Drive del equipo. Hay que descomprimirlo dentro de data/raw/ de la copia local del repo, sin
-subcarpetas y con los mismos nombres de archivo, antes de correr los scripts.
+PROYECTO del Drive del equipo. Los dos archivos van directo en data/raw/ con sus mismos nombres, es decir,
+data/raw/ReportesAgua20222024.csv y data/raw/locatel0311-2023.csv, y NO en data/raw/datos_tarea3/ (Windows
+crea esa subcarpeta al descomprimir: si aparece, hay que sacar los archivos de ahí). Si no, los scripts no los encuentran.
