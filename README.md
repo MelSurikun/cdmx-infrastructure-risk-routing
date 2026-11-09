@@ -83,7 +83,29 @@ recientes). Se integran los reportes de SACMEX y las solicitudes del *0311 de 20
 
 Las fuentes principales provienen del [Portal de Datos Abiertos de la CDMX](https://datos.cdmx.gob.mx/):
 Reportes de agua (SACMEX) y Solicitudes *0311 (ADIP / Locatel). Los archivos se guardan en `data/raw/`
-y cada uno se documentará con su URL, fecha de descarga y huella SHA-256.
+y cada uno está documentado con su URL, fecha de descarga y huella SHA-256 en
+[docs/fuentes_datos.md](docs/fuentes_datos.md).
+
+## Base de datos
+
+1. Crear la base una sola vez (en PowerShell; `psql` está en `C:\Program Files\PostgreSQL\17\bin\` si no está en el PATH):
+
+   ```
+   psql -U postgres -c "CREATE DATABASE cdmx_riesgo;"
+   ```
+
+2. Desde la raíz del repo, correr los scripts en orden:
+
+   ```
+   psql -U postgres -d cdmx_riesgo -f sql/01_crear_tablas.sql
+   psql -U postgres -d cdmx_riesgo -f sql/02_cargar_datos.sql
+   psql -U postgres -d cdmx_riesgo -f sql/03_verificacion.sql
+   psql -U postgres -d cdmx_riesgo -f sql/04_staging.sql
+   psql -U postgres -d cdmx_riesgo -f sql/05_conteos_p1.sql
+   ```
+
+   Todas las filas del 05 deben decir `coincide`. El esquema `raw` guarda los CSV tal cual y el esquema `stg`
+   guarda los datos limpios de 2023. Para analizar SACMEX se usa la vista `stg.v_reportes_agua` (sin filas repetidas).
 
 ## Flujo de trabajo con Git
 
