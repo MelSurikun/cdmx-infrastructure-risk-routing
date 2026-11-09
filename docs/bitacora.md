@@ -16,3 +16,6 @@ Se agregaron los scripts sql/01 a sql/05: carga cruda de SACMEX 2022 a 2024 y *0
 staging en el esquema stg con familia de falla (tabla stg.mapa_familia) y banderas fila_repetida (fila idéntica
 completa, 12,729), hueco_abril y coord_valida. sql/05_conteos_p1.sql compara cada conteo con la P1; las fuentes y
 sus huellas SHA-256 quedan en docs/fuentes_datos.md.
+Los dos CSV de esta tarea (ReportesAgua20222024.csv y locatel0311-2023.csv) están en un ZIP en la carpeta
+PROYECTO del Drive del equipo. Hay que descomprimirlo dentro de data/raw/ de la copia local del repo, sin
+subcarpetas y con los mismos nombres de archivo, antes de correr los scripts.
